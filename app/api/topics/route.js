@@ -61,3 +61,45 @@ export async function POST(request) {
         return NextResponse.json({ error: error.message }, { status: 400 });
     }
 }
+
+/**
+ * @swagger
+ * /api/topics:
+ *   get:
+ *     summary: Get all student records
+ *     description: Retrieves a list of all student records from the database
+ *     responses:
+ *       200:
+ *         description: List of student records retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 topics:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                         example: "507f1f77bcf86cd799439011"
+ *                       title:
+ *                         type: string
+ *                         example: "John Doe"
+ *                       description:
+ *                         type: string
+ *                         example: "Computer Science Student"
+ *                       createdAt:
+ *                         type: string
+ *                         format: date-time
+ *                       updatedAt:
+ *                         type: string
+ *                         format: date-time
+ */
+
+export async function GET(){
+    await connectMongoDB();
+    const topics = await Topic.find();
+    return NextResponse.json({topics})
+}
