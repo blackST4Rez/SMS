@@ -103,3 +103,49 @@ export async function GET(){
     const topics = await Topic.find();
     return NextResponse.json({topics})
 }
+
+/**
+ * @swagger
+ * /api/topics:
+ *   delete:
+ *     summary: Delete a student record
+ *     description: Deletes a specific student record by ID
+ *     parameters:
+ *       - in: query
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the student record to delete
+ *     responses:
+ *       200:
+ *         description: Student record deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Student Database Deleted"
+ *       400:
+ *         description: Invalid ID format
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Invalid ID format"
+ */
+
+export async function DELETE(request){
+    const id = request.nextUrl.searchParams.get("id");
+    await connectMongoDB();
+    const result = await Topic.findByIdAndDelete(id);
+    if (!result) {
+        return NextResponse.json({ error: "Invalid ID format" }, { status: 400 });
+    }
+    return NextResponse.json({ message: "Student Database Deleted" }, { status: 200 });
+}
