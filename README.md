@@ -30,7 +30,7 @@ A modern, full-stack Student Management System built with Next.js, featuring com
 | ⚙️ **Backend**    | Next.js API Routes, Node.js                                                 |
 | 🗄️ **Database**   | MongoDB                                                                     |
 | 🧪 **Testing**    | Jest, Testing Library                                                        |
-| ✅ **Validation** | Custom validation utilities                                                 |
+| ✅ **Validation** | Validation with Zod                                                 |
 | 📖 **Documentation** | Swagger UI                                                                |
 | 🚀 **Deployment** | Vercel (recommended)                                                        |
 
