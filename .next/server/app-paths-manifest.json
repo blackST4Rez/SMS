@@ -1,0 +1,6 @@
+{
+  "/api/topics/route": "app/api/topics/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/addTopic/page": "app/addTopic/page.js"
+}
