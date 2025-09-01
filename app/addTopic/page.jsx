@@ -11,6 +11,28 @@ export default function AddTopic(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!title || !description) {
+            alert("Student Name and Course are required.");
+            return;
+        }
+        try {
+            const res = await fetch('/api/topics', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ title, description }),
+            });
+            if(res.ok){
+                router.push('/')
+            }else{
+                throw new Error ("Failed to create a topic.")
+            }
+        } catch (error) {
+            console.error("Error adding topic:", error);
+        }
+    };
+
 
          // console.log("hi")
     return (
@@ -32,5 +54,4 @@ export default function AddTopic(){
 
         </form>
     );
-}
 }
