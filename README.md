@@ -38,7 +38,7 @@ A modern, full-stack Student Management System built with Next.js, featuring com
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/student-management-system.git
+   git clone https://github.com/your-username/SMS.git
    cd SMS
    ```
 
