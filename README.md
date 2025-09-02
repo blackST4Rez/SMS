@@ -71,15 +71,19 @@ A modern, full-stack Student Management System built with Next.js, featuring com
 
 ## 🎯 Usage
 
-### Adding a Topic
-1. Navigate to the "Add Topic" page
+### Adding a Student
+1. Navigate to the "Add Student" page
 2. Fill in the required fields
-3. Click "Add Topic" to save
+3. Click "Add Student" to save
 
 ### Editing a Topic
 1. From the topic list, click the edit button
 2. Modify the topic details
 3. Save changes
+
+### Viewing Topics
+- Click on delete icon.
+- Select YES on the dialog box.
 
 ### Viewing Topics
 - Browse all topics on the main page
@@ -140,7 +144,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Database powered by [MongoDB](https://www.mongodb.com)
 - Testing with [Jest](https://jestjs.io)
 - API documentation with [Swagger](https://swagger.io)
+- Validation with [Zod](https://zod.dev)
 
 ---
 
 **Made with ❤️ using Next.js**
+
